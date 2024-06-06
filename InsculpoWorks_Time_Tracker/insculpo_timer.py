@@ -1,11 +1,11 @@
 import json
 import csv
 import time
+import datetime as dt
 from datetime import datetime
 import tkinter as tk
 from tkinter import ttk
 import pytz
-import pyautogui
 
 PST_TO_UTC = -8
 DIE = ""
@@ -16,6 +16,7 @@ class TimeKeeper:
         self.curr_task = task_name
         self.data_ref = task_data
         self.root.title(f"Current Task: {self.curr_task}")
+        self.raw_seconds = 0
         self.seconds = 0
         self.time_date = f"{self.seconds//3600}:{self.seconds//60}:{self.seconds%60}"
         self.is_playing = True
@@ -28,10 +29,11 @@ class TimeKeeper:
         self.is_playing = False
 
     def auto_update(self):
+        self.raw_seconds += 1
         if self.is_playing:
-            self.seconds +=1
+            self.seconds += 1
         self.root.attributes("-topmost",True)
-        self.time_date = f"{self.seconds//3600}:{self.seconds//60}:{self.seconds%60}"
+        self.time_date = f"{dt.timedelta(seconds=self.seconds)}"
         self.widget_label.config(text=self.time_date)
         self.stop_hiding  = self.root.after(1000,self.auto_update)
 
@@ -52,7 +54,7 @@ class TimeKeeper:
 
     def build_widget(self):
         s = ttk.Style()
-        self.root.geometry('320x90-0-82')
+        self.root.geometry('320x90-0-40')
         self.root.configure(bg='black')
         s.configure('IW_Violet.TFrame',background='#301E59',font='calibri')
         s.configure('IW_Mucosal.TButton',background='#AE5044',font='calibri')
