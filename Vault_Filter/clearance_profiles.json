@@ -1,0 +1,52 @@
+[
+    {
+        "Common-Knowledge": {
+            "bl_tags": [
+                "#Type-1-Clearance",
+                "#Type-2-Clearance",
+                "#Type-3-Clearance",
+                "#All-Knowledge"
+            ],
+            "wl_tags": [],
+            "description": "Common perspective agnostic knowledge without spoilers, what a character looking things up casually online would find."
+        },
+        "Type-1-Clearance": {
+            "bl_tags": [
+                "#Type-2-Clearance",
+                "#Type-3-Clearance",
+                "#All-Knowledge"
+            ],
+            "wl_tags": [],
+            "description": "Knowledge which gives more insight into the sprawl and some anomalies."
+        },
+        "Type-2-Clearance": {
+            "bl_tags": [
+                "#Type-3-Clearance",
+                "#All-Knowledge"
+            ],
+            "wl_tags": [],
+            "description": "The depths of the sprawl are known, the archivers as well.  Stranger anomalies as well.  Insights into our lost ancestors also are provided..."
+        },
+        "Type-3-Clearance": {
+            "bl_tags": [
+                "#All-Knowledge"
+            ],
+            "wl_tags": [],
+            "description": "Galactic knowledge, the secrets of the galaxy and insights into what is really going on are known."
+        },
+        "All-Knowledge": {
+            "bl_tags": [],
+            "wl_tags": [],
+            "description": "The god perspective of the universe."
+        },
+        "Plexus-Only": {
+            "bl_tags": [],
+            "wl_tags": [
+                "#Galactic-Region/plexus",
+                "#general",
+                "#Entry"
+            ],
+            "description": "Only has Plexus Knowledge. (May be combined w/ the clearance profile?)"
+        }
+    }
+]
